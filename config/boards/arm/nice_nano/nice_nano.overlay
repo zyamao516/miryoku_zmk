@@ -1,8 +1,7 @@
-/* config/boards/arm/nice_nano/nice_nano.overlay */
-
-/* Provide the label that the nice_view shield expects */
+/* Provide the label that the nice_view shield requires */
 nice_view_spi: &spi1 {
     status = "okay";
-    /* Default assumption (matches the adapter README): CS on Pro Micro D1 */
-    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>;
+    /* CS pin must match your wiring (often D1 on nice!nano v2 builds) */
+    /* If you already know it, set it here; otherwise copy the known-good overlay from ZMK */
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 };
